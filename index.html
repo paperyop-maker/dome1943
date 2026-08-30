@@ -10,10 +10,10 @@
   img{ max-width:100%; }
   [hidden]{ display:none !important; }
 
-  @import url("https://fonts.googleapis.com/css2?family=Song+Myung&family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600&display=swap");
-
   /* ---------- tokens : dark is the committed default ---------- */
   :root{
+    --font-display:'Malgun Gothic','Apple SD Gothic Neo',-apple-system,BlinkMacSystemFont,'Noto Sans KR','Segoe UI',sans-serif;
+    --font-ui:'Malgun Gothic','Apple SD Gothic Neo',-apple-system,BlinkMacSystemFont,'Noto Sans KR','Segoe UI',sans-serif;
     --ink:#1a130d;
     --surface:#251b13;
     --surface-2:#2f2317;
@@ -81,9 +81,7 @@
   body{
     background:var(--ink);
     color:var(--text);
-    font-family:'Noto Serif KR', Georgia, serif;
-    display:flex;
-    justify-content:center;
+    font-family:var(--font-display);
     -webkit-tap-highlight-color:transparent;
   }
   ::selection{ background:var(--rust); color:var(--rust-ink); }
@@ -92,6 +90,7 @@
     width:100%;
     max-width:480px;
     min-height:100vh;
+    margin:0 auto;
     background:var(--surface);
     box-shadow: var(--shadow);
     position:relative;
@@ -114,7 +113,7 @@
   h1,h2,h3{ text-wrap:balance; margin:0; }
   p{ margin:0; }
   .eyebrow{
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.68rem;
     letter-spacing:.22em;
     color:var(--rust);
@@ -139,7 +138,6 @@
     isolation:isolate;
     border-bottom:1px solid var(--border);
   }
-  :root[data-theme="light"] .hero, @media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .hero{ color:var(--text); } }
 
   .emblem{ margin:0 auto 1.6rem; width:104px; height:104px; opacity:.92; }
   .emblem circle{ fill:none; stroke:var(--brass); }
@@ -156,14 +154,14 @@
   .hero .eyebrow::after{ content:""; width:.9em; height:1px; background:var(--rust); display:inline-block; }
 
   .title-kr{
-    font-family:'Song Myung', 'Noto Serif KR', serif;
+    font-family:var(--font-display);
     font-size:2.6rem;
     line-height:1.28;
     margin:1rem 0 .9rem;
     color:var(--text);
   }
   .hero-sub{
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.92rem;
     color:var(--text-muted);
     line-height:1.7;
@@ -186,14 +184,14 @@
   section.block:last-of-type{ border-bottom:none; }
   .block-head{ margin-bottom:1.5rem; }
   .block-title{
-    font-family:'Noto Serif KR', serif;
+    font-family:var(--font-display);
     font-size:1.28rem;
     font-weight:700;
     margin-top:.5rem;
     color:var(--text);
   }
   .block-desc{
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.84rem;
     color:var(--text-muted);
     margin-top:.5rem;
@@ -210,13 +208,13 @@
   .cover-frame img{ display:block; width:100%; height:auto; }
 
   .story-title{
-    font-family:'Song Myung', serif;
+    font-family:var(--font-display);
     font-size:1.5rem;
     line-height:1.4;
     margin-top:1.3rem;
   }
   .story-byline{
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.82rem;
     color:var(--text-muted);
     margin-top:.35rem;
@@ -224,7 +222,7 @@
 
   .chip-row{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
   .chip{
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.72rem;
     letter-spacing:.02em;
     padding:.4rem .7rem;
@@ -240,7 +238,7 @@
     display:grid;
     grid-template-columns:auto 1fr;
     gap:.5rem 1rem;
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.82rem;
   }
   .meta-list dt{ color:var(--text-faint); }
@@ -260,7 +258,7 @@
 
   .buy-note{
     margin-top:1.4rem;
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.8rem;
     color:var(--text-muted);
     line-height:1.75;
@@ -273,7 +271,7 @@
     padding:.9rem 1rem;
     background:var(--surface-3);
     border-radius:6px;
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.78rem;
     color:var(--text-muted);
     line-height:1.65;
@@ -282,7 +280,7 @@
 
   /* ---------- progress tracker ---------- */
   .countdown{
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.76rem;
     color:var(--brass);
     letter-spacing:.04em;
@@ -321,13 +319,13 @@
     @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
   }
   .stage-label{
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:var(--font-ui);
     font-size:.68rem; color:var(--text-faint); letter-spacing:.06em;
   }
   .stage.current .stage-label{ color:var(--rust); font-weight:600; }
   .stage.done .stage-label{ color:var(--moss); }
-  .stage-name{ font-size:.98rem; margin-top:.15rem; font-family:'Noto Serif KR',serif; font-weight:600; }
-  .stage-note{ font-family:'Noto Sans KR', sans-serif; font-size:.8rem; color:var(--text-muted); margin-top:.3rem; line-height:1.65; }
+  .stage-name{ font-size:.98rem; margin-top:.15rem; font-family:var(--font-display); font-weight:600; }
+  .stage-note{ font-family:var(--font-ui); font-size:.8rem; color:var(--text-muted); margin-top:.3rem; line-height:1.65; }
 
   .status-note{
     margin-top:1.7rem;
@@ -346,23 +344,23 @@
     border-radius:8px;
     padding:1.1rem 1.2rem;
   }
-  .era-time{ font-family:'Noto Sans KR', sans-serif; font-weight:700; font-size:.92rem; color:var(--rust); }
-  .era-place{ font-family:'Noto Sans KR', sans-serif; font-size:.78rem; color:var(--text-muted); margin-top:.25rem; }
+  .era-time{ font-family:var(--font-ui); font-weight:700; font-size:.92rem; color:var(--rust); }
+  .era-place{ font-family:var(--font-ui); font-size:.78rem; color:var(--text-muted); margin-top:.25rem; }
 
   .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-top:.9rem; }
   .role-card{
     background:var(--surface-2); border:1px solid var(--border); border-radius:6px;
     padding:.7rem .8rem;
   }
-  .role-name{ font-family:'Noto Serif KR', serif; font-weight:700; font-size:.9rem; }
-  .role-tag{ font-family:'Noto Sans KR', sans-serif; font-size:.68rem; color:var(--text-faint); margin-top:.2rem; line-height:1.5; }
+  .role-name{ font-family:var(--font-display); font-weight:700; font-size:.9rem; }
+  .role-tag{ font-family:var(--font-ui); font-size:.68rem; color:var(--text-faint); margin-top:.2rem; line-height:1.5; }
 
   .trio{ margin-top:1.6rem; display:flex; flex-direction:column; gap:0; }
   .trio-card{
-    border-radius:6px; padding:.9rem 1rem; font-family:'Noto Sans KR', sans-serif;
+    border-radius:6px; padding:.9rem 1rem; font-family:var(--font-ui);
     border:1px solid var(--border);
   }
-  .trio-card .name{ font-family:'Noto Serif KR', serif; font-size:1.02rem; font-weight:700; }
+  .trio-card .name{ font-family:var(--font-display); font-size:1.02rem; font-weight:700; }
   .trio-card .desc{ font-size:.76rem; margin-top:.2rem; opacity:.85; }
   .trio-card.her{ background:var(--ember-ink); border-color:var(--ember); color:var(--ember); }
   .trio-card.her .desc{ color:var(--ember); }
@@ -370,7 +368,7 @@
   .trio-card.chb{ background:var(--moss-ink); border-color:var(--moss); color:var(--moss); }
   .trio-card.chb .desc{ color:var(--moss); }
   .trio-link{
-    text-align:center; font-family:'Noto Sans KR', sans-serif; font-size:.68rem; color:var(--text-faint);
+    text-align:center; font-family:var(--font-ui); font-size:.68rem; color:var(--text-faint);
     padding:.55rem 0; letter-spacing:.02em;
   }
 
@@ -380,7 +378,7 @@
   }
   .act-list{ margin-top:.9rem; display:flex; flex-direction:column; gap:.5rem; }
   .act-item{
-    font-family:'Noto Sans KR', sans-serif; font-size:.8rem; color:var(--text-muted);
+    font-family:var(--font-ui); font-size:.8rem; color:var(--text-muted);
     background:var(--surface-2); padding:.65rem .85rem; border-radius:5px; line-height:1.6;
   }
 
@@ -388,23 +386,23 @@
   .clue-card{
     background:var(--brass-ink); border:1px solid var(--brass); border-radius:6px; padding:.75rem .8rem;
   }
-  .clue-mark{ font-size:.98rem; font-weight:700; font-family:'Noto Serif KR',serif; color:var(--brass); line-height:1.4; }
-  .clue-place{ font-family:'Noto Sans KR', sans-serif; font-size:.68rem; color:var(--text-muted); margin-top:.3rem; line-height:1.5; }
+  .clue-mark{ font-size:.98rem; font-weight:700; font-family:var(--font-display); color:var(--brass); line-height:1.4; }
+  .clue-place{ font-family:var(--font-ui); font-size:.68rem; color:var(--text-muted); margin-top:.3rem; line-height:1.5; }
 
   .hub-card{
     background:var(--moss-ink); border:1px solid var(--moss); border-radius:8px; padding:1rem 1.1rem;
     text-align:center; margin-top:1.2rem;
   }
-  .hub-card .name{ font-family:'Noto Serif KR', serif; font-weight:700; color:var(--moss); font-size:1.05rem; }
-  .hub-card .desc{ font-family:'Noto Sans KR', sans-serif; font-size:.78rem; color:var(--moss); opacity:.85; margin-top:.25rem; }
+  .hub-card .name{ font-family:var(--font-display); font-weight:700; color:var(--moss); font-size:1.05rem; }
+  .hub-card .desc{ font-family:var(--font-ui); font-size:.78rem; color:var(--moss); opacity:.85; margin-top:.25rem; }
 
   .present-grid{ display:grid; grid-template-columns:1fr 1fr; gap:.55rem; margin-top:.7rem; }
   .present-card{ background:var(--surface-2); border:1px solid var(--border); border-radius:6px; padding:.65rem .75rem; }
-  .present-card .name{ font-family:'Noto Serif KR', serif; font-weight:700; font-size:.84rem; }
-  .present-card .desc{ font-family:'Noto Sans KR', sans-serif; font-size:.66rem; color:var(--text-faint); margin-top:.2rem; line-height:1.5; }
+  .present-card .name{ font-family:var(--font-display); font-weight:700; font-size:.84rem; }
+  .present-card .desc{ font-family:var(--font-ui); font-size:.66rem; color:var(--text-faint); margin-top:.2rem; line-height:1.5; }
 
   .lineage{
-    margin-top:1.3rem; font-family:'Noto Sans KR', sans-serif; font-size:.74rem; color:var(--text-muted);
+    margin-top:1.3rem; font-family:var(--font-ui); font-size:.74rem; color:var(--text-muted);
     display:flex; flex-wrap:wrap; gap:.4rem .3rem; line-height:1.6;
   }
   .lineage .seg{ background:var(--surface-2); padding:.28rem .55rem; border-radius:999px; border:1px solid var(--border); white-space:nowrap; }
@@ -419,21 +417,21 @@
     background:var(--surface); border:2px solid var(--rust);
   }
   .arc-step.final::after{ background:var(--ember); border-color:var(--ember); }
-  .arc-num{ font-family:'Noto Sans KR', sans-serif; font-size:.66rem; color:var(--rust); letter-spacing:.08em; }
+  .arc-num{ font-family:var(--font-ui); font-size:.66rem; color:var(--rust); letter-spacing:.08em; }
   .arc-step.final .arc-num{ color:var(--ember); }
-  .arc-name{ font-family:'Song Myung', serif; font-size:1.15rem; margin-top:.15rem; }
-  .arc-desc{ font-family:'Noto Sans KR', sans-serif; font-size:.78rem; color:var(--text-muted); margin-top:.2rem; line-height:1.6; }
+  .arc-name{ font-family:var(--font-display); font-size:1.15rem; margin-top:.15rem; }
+  .arc-desc{ font-family:var(--font-ui); font-size:.78rem; color:var(--text-muted); margin-top:.2rem; line-height:1.6; }
 
   .closing-quote{
     margin-top:2rem; text-align:center; padding:1.6rem 1.2rem;
     background:linear-gradient(160deg, var(--rust-ink), transparent);
     border-top:1px solid var(--border); border-bottom:1px solid var(--border);
-    font-family:'Song Myung', serif; font-size:1.15rem; line-height:1.9; color:var(--text);
+    font-family:var(--font-display); font-size:1.15rem; line-height:1.9; color:var(--text);
   }
 
   footer{
     padding:2.2rem 1.5rem 2.8rem; text-align:center;
-    font-family:'Noto Sans KR', sans-serif; font-size:.72rem; color:var(--text-faint); line-height:1.9;
+    font-family:var(--font-ui); font-size:.72rem; color:var(--text-faint); line-height:1.9;
   }
   footer a{ color:var(--rust); text-decoration:none; }
 
