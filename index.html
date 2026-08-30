@@ -243,6 +243,14 @@
   }
   .meta-list dt{ color:var(--text-faint); }
   .meta-list dd{ margin:0; color:var(--text); font-variant-numeric:tabular-nums; }
+  .price-row{ display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; }
+  .buy-btn{
+    font-family:var(--font-ui); font-size:.74rem; font-weight:600;
+    padding:.4rem .85rem; border-radius:999px;
+    background:var(--rust); color:var(--rust-ink);
+    text-decoration:none; letter-spacing:.02em;
+    box-shadow:0 6px 14px -6px var(--rust-deep);
+  }
 
   .pull-quote{
     margin-top:1.4rem;
@@ -481,7 +489,8 @@
     <dl class="meta-list">
       <dt>인쇄</dt><dd>2026. 09. 05.</dd>
       <dt>발행</dt><dd>2026. 09. 12.</dd>
-      <dt>가격</dt><dd>11,000원</dd>
+      <dt>가격</dt>
+      <dd class="price-row">11,000원 <a class="buy-btn" href="order.html">구매하기</a></dd>
     </dl>
 
     <blockquote class="pull-quote">이야기를 다 쓰고 나서도 한동안 원고를 닫지 못했다. 마지막 장을 덮으면 안에 남은 사람들을 정말로 어둠 속에 두고 나오는 것 같아서였다.<br><br>
