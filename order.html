@@ -556,6 +556,10 @@
         <label for="fAddress">택배주소<span class="required-mark">*</span></label>
         <textarea id="fAddress" name="address" required rows="3" placeholder="받으실 주소를 정확히 적어 주세요"></textarea>
       </div>
+      <div class="field">
+        <label for="fNote">전하실 말씀</label>
+        <textarea id="fNote" name="note" rows="3" placeholder="전달하고 싶은 말씀이 있다면 자유롭게 적어 주세요 (선택)"></textarea>
+      </div>
 
       <div class="btn-row">
         <a class="btn-secondary" href="index.html">취소</a>
@@ -599,6 +603,7 @@
     var name = document.getElementById('fName').value.trim();
     var phone = document.getElementById('fPhone').value.trim();
     var address = document.getElementById('fAddress').value.trim();
+    var note = document.getElementById('fNote').value.trim();
 
     function showStatus(kind, msg) {
       status.hidden = false;
@@ -623,7 +628,7 @@
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ name: name, phone: phone, address: address, page: 'gaehangjang-order' })
+      body: JSON.stringify({ name: name, phone: phone, address: address, note: note, page: 'gaehangjang-order' })
     }).then(function () {
       document.getElementById('orderForm').hidden = true;
       showStatus('success', '접수되었습니다. 입금 확인 후 순서대로 발송해 드리겠습니다. 감사합니다.');
